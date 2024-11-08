@@ -4,6 +4,7 @@ import './globals.css';
 import { MockInitializer } from '@/components/MockInitializer';
 import { Navbar } from '@/components/Navbar';
 import { AuthProvider } from '@/contexts/auth-context';
+import { Toaster } from "@/components/ui/toaster"
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -25,6 +26,7 @@ export default function RootLayout({
           <Navbar />
           {children}
         </AuthProvider>
+        <Toaster />
       </body>
     </html>
   );

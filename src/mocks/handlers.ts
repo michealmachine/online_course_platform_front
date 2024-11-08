@@ -33,7 +33,7 @@ const mockCourses: Course[] = [
     price: 199,
     imageUrl: 'https://picsum.photos/seed/typescript/400/300',
     category: '1',
-    level: '入门',
+    level: '入',
     studentsCount: 890,
     rating: 4.6,
     tags: ['TypeScript', 'JavaScript'],
@@ -137,7 +137,7 @@ const mockInstitutionUsers = [
 ];
 
 // 添加用户详情的 mock 数据
-const mockUserDetails: Record<string, UserDetails> = {
+const mockUserDetails = {
   "1": {
     ...mockUserList[0],
     role: "user",
@@ -184,7 +184,7 @@ const mockAnalyticsData = {
     institutionTypes: [
       { type: '教育科技', count: 45 },
       { type: '培训机构', count: 38 },
-      { type: '高校机构', count: 28 },
+      { type: '高校机', count: 28 },
       { type: '企业培训', count: 25 },
       { type: '其他', count: 20 },
     ],
@@ -271,10 +271,10 @@ const mockOrders = [
   {
     id: '2',
     courseId: '2',
-    courseName: 'Vue 门实战',
+    courseName: 'Vue 战',
     courseType: 'free',
     userId: '2',
-    userName: '李四',
+    userName: '',
     userEmail: 'lisi@example.com',
     amount: 0,
     status: 'completed',
@@ -317,7 +317,7 @@ const mockInstitutionCourses = [
   },
 ];
 
-// 添加更多试题的 mock 数据
+// 添加更试题的 mock 数据
 const mockQuestions = [
   // React 课程的试题
   {
@@ -354,7 +354,7 @@ const mockQuestions = [
     options: [
       { id: 'o1', content: '条件语句中' },
       { id: 'o2', content: '循环中' },
-      { id: 'o3', content: '以上都是' },
+      { id: 'o3', content: '以上都' },
     ],
     correctOptionId: 'o3',
     createdAt: '2024-03-15T11:00:00Z',
@@ -366,7 +366,7 @@ const mockQuestions = [
     content: 'useEffect 的第二个参数是什么？',
     options: [
       { id: 'o1', content: '依赖数组' },
-      { id: 'o2', content: '回调函数' },
+      { id: 'o2', content: '回调函' },
       { id: 'o3', content: '配置对象' },
     ],
     correctOptionId: 'o1',
@@ -417,7 +417,7 @@ const mockQuestions = [
     id: 'q8',
     courseId: '3',
     chapterId: 'c7',
-    content: 'TypeScript 相比 JavaScript 的主要优势是什么？',
+    content: 'TypeScript 比 JavaScript 的主要优势是什么？',
     options: [
       { id: 'o1', content: '类型安全' },
       { id: 'o2', content: '运行速度快' },
@@ -440,6 +440,239 @@ const mockQuestions = [
     createdAt: '2024-03-15T14:30:00Z',
   },
 ];
+
+// 添加机构课程相关的 mock 数据
+const mockInstitutionContentCourses = [
+  {
+    id: '1',
+    title: 'React 高级教程',
+    chaptersCount: 12,
+    price: 299,
+    status: 'published',
+    studentsCount: 234,
+    rating: 4.8,
+    updatedAt: '2024-03-15',
+  },
+  {
+    id: '2',
+    title: 'Vue.js 实战课程',
+    chaptersCount: 10,
+    price: 199,
+    status: 'draft',
+    studentsCount: 0,
+    rating: 0,
+    updatedAt: '2024-03-14',
+  },
+  {
+    id: '3',
+    title: 'TypeScript 入门到精通',
+    chaptersCount: 15,
+    price: 259,
+    status: 'reviewing',
+    studentsCount: 0,
+    rating: 0,
+    updatedAt: '2024-03-13',
+  },
+  {
+    id: '4',
+    title: 'Node.js 后端开发',
+    chaptersCount: 18,
+    price: 359,
+    status: 'published',
+    studentsCount: 156,
+    rating: 4.6,
+    updatedAt: '2024-03-12',
+  },
+  {
+    id: '5',
+    title: 'Python 数据分析',
+    chaptersCount: 20,
+    price: 399,
+    status: 'rejected',
+    studentsCount: 0,
+    rating: 0,
+    updatedAt: '2024-03-11',
+  }
+];
+
+const mockInstitutionContentCourseStats = {
+  totalCourses: 24,
+  newCoursesThisMonth: 3,
+  totalStudents: 1234,
+  studentGrowth: 15.3,
+  totalRevenue: 123456,
+  revenueGrowth: 23.4,
+  averageRating: 4.8,
+  totalReviews: 345,
+};
+
+// 课程相关的 mock 数据
+const mockCourseList = [
+  {
+    id: 1,
+    name: "React 高级教程",
+    brief: "从入门到精通，掌握 React 18 新特性和高级开发技巧",
+    mtName: "前端开发",
+    stName: "React开发",
+    mt: 1,
+    st: 1,
+    charge: "201001",
+    price: 299.00,
+    status: "202001", // 未提交
+    teacherName: "张教授",
+    validDays: 365,
+    studentsCount: 1234,
+    rating: 4.8,
+    updatedAt: '2024-03-15',
+  },
+  {
+    id: 2,
+    name: "Vue.js 实战课程",
+    brief: "系统学习 Vue.js，构建现代化前端应用",
+    mtName: "前端开发",
+    stName: "Vue开发",
+    mt: 1,
+    st: 2,
+    charge: "201001",
+    price: 199.00,
+    status: "202003", // 已发布
+    teacherName: "李老师",
+    validDays: 365,
+    studentsCount: 890,
+    rating: 4.6,
+    updatedAt: '2024-03-14',
+  },
+];
+
+// 课程统计数据
+const mockCourseStats = {
+  totalCourses: 24,
+  newCoursesThisMonth: 3,
+  totalStudents: 1234,
+  studentGrowth: 15.3,
+  totalRevenue: 123456,
+  revenueGrowth: 23.4,
+  averageRating: 4.8,
+  totalReviews: 345,
+};
+
+// 课程计划树的 mock 数据
+const mockTeachplanTree = {
+  1: [
+    {
+      id: 1,
+      name: "第一章：React 基础",
+      level: 1,
+      orderBy: 1,
+      teachPlanTreeNodes: [
+        {
+          id: 2,
+          name: "1.1 React 简介",
+          level: 2,
+          orderBy: 1,
+          mediaType: "video",
+          mediaFileName: "1.1-intro.mp4"
+        },
+        {
+          id: 3,
+          name: "1.2 JSX 语法",
+          level: 2,
+          orderBy: 2,
+          mediaType: "video",
+          mediaFileName: "1.2-jsx.mp4"
+        }
+      ]
+    },
+    {
+      id: 4,
+      name: "第二章：React Hooks",
+      level: 1,
+      orderBy: 2,
+      teachPlanTreeNodes: [
+        {
+          id: 5,
+          name: "2.1 useState",
+          level: 2,
+          orderBy: 1,
+          mediaType: "video",
+          mediaFileName: "2.1-usestate.mp4"
+        }
+      ]
+    }
+  ]
+};
+
+// 课程教师相关的 mock 数据
+const mockTeachers = {
+  1: [
+    {
+      id: 1,
+      courseId: 1,
+      name: "张教授",
+      position: "高级讲师",
+      description: "资深前端开发专家，具有10年以上开发经验"
+    }
+  ]
+};
+
+// 课程章节的 mock 数据
+const mockChapters: Record<string, Array<{
+  id: number;
+  name: string;
+  level: number;
+  orderBy: number;
+  teachPlanTreeNodes: Array<{
+    id: number;
+    name: string;
+    level: number;
+    orderBy: number;
+    mediaType?: string;
+    mediaFileName?: string;
+  }>;
+}>> = {
+  '1': [
+    {
+      id: 1,
+      name: "第一章：React 基础",
+      level: 1,
+      orderBy: 1,
+      teachPlanTreeNodes: [
+        {
+          id: 2,
+          name: "1.1 React 简介",
+          level: 2,
+          orderBy: 1,
+          mediaType: "video",
+          mediaFileName: "1.1-intro.mp4"
+        },
+        {
+          id: 3,
+          name: "1.2 JSX 语法",
+          level: 2,
+          orderBy: 2,
+          mediaType: "video",
+          mediaFileName: "1.2-jsx.mp4"
+        }
+      ]
+    },
+    {
+      id: 4,
+      name: "第二章：React Hooks",
+      level: 1,
+      orderBy: 2,
+      teachPlanTreeNodes: [
+        {
+          id: 5,
+          name: "2.1 useState",
+          level: 2,
+          orderBy: 1,
+          mediaType: "video",
+          mediaFileName: "2.1-usestate.mp4"
+        }
+      ]
+    }
+  ]
+};
 
 export const handlers = [
   http.get('/api/courses', () => {
@@ -523,12 +756,14 @@ export const handlers = [
 
   http.post('/api/admin/users', async ({ request }) => {
     const body = await request.json();
+    const newUser = {
+      id: Math.random().toString(36).substr(2, 9),
+      createdAt: new Date().toISOString(),
+    };
+    Object.assign(newUser, body);
+
     return HttpResponse.json({
-      data: {
-        id: Math.random().toString(36).substr(2, 9),
-        ...body,
-        createdAt: new Date().toISOString(),
-      },
+      data: newUser,
       status: 200,
       message: 'success',
     });
@@ -536,11 +771,13 @@ export const handlers = [
 
   http.put('/api/admin/users/:id', async ({ request, params }) => {
     const body = await request.json();
+    const updatedUser = {
+      id: params.id,
+    };
+    Object.assign(updatedUser, body);
+
     return HttpResponse.json({
-      data: {
-        id: params.id,
-        ...body,
-      },
+      data: updatedUser,
       status: 200,
       message: 'success',
     });
@@ -596,18 +833,11 @@ export const handlers = [
     });
   }),
 
-  // 添加批量操作 handler
+  // 修改量操作 handler
   http.post('/api/admin/users/batch', async ({ request }) => {
     const body = await request.json();
-    const { operation, userIds } = body;
-
-    // 在实际用中，这里会更新数据库
-    // 这里只是模拟成功响应
     return HttpResponse.json({
-      data: {
-        updatedIds: userIds,
-        operation,
-      },
+      data: body,
       status: 200,
       message: 'success',
     });
@@ -690,19 +920,25 @@ export const handlers = [
     });
   }),
 
-  // 创建新试题
+  // 修改创建试题 handler
   http.post('/api/institution/questions', async ({ request }) => {
     const body = await request.json();
     const newQuestion = {
       id: `q${mockQuestions.length + 1}`,
-      ...body,
+      courseId: '',
+      chapterId: '',
+      content: '',
+      options: [],
+      correctOptionId: '',
       createdAt: new Date().toISOString(),
     };
+    Object.assign(newQuestion, body);
     mockQuestions.push(newQuestion);
+
     return HttpResponse.json({
-      data: newQuestion,
-      status: 200,
-      message: 'success',
+      code: 0,
+      message: "success",
+      data: newQuestion
     });
   }),
 
@@ -711,12 +947,10 @@ export const handlers = [
     const body = await request.json();
     const questionIndex = mockQuestions.findIndex(q => q.id === params.id);
     if (questionIndex !== -1) {
-      mockQuestions[questionIndex] = {
-        ...mockQuestions[questionIndex],
-        ...body,
-      };
+      const updatedQuestion = Object.assign({}, mockQuestions[questionIndex], body);
+      mockQuestions[questionIndex] = updatedQuestion;
       return HttpResponse.json({
-        data: mockQuestions[questionIndex],
+        data: updatedQuestion,
         status: 200,
         message: 'success',
       });
@@ -740,6 +974,442 @@ export const handlers = [
     return new HttpResponse(null, {
       status: 404,
       statusText: 'Question not found',
+    });
+  }),
+
+  // 添加机构课程相关的新 handlers
+  http.get('/api/institution/content/courses', () => {
+    return HttpResponse.json({
+      data: mockInstitutionContentCourses,
+      status: 200,
+      message: 'success',
+    });
+  }),
+
+  http.get('/api/institution/content/courses/stats', () => {
+    return HttpResponse.json({
+      data: mockInstitutionContentCourseStats,
+      status: 200,
+      message: 'success',
+    });
+  }),
+
+  // 修改创建课程 handler
+  http.post('/api/institution/content/courses', async ({ request }) => {
+    const body = await request.json();
+    const newCourse = {
+      id: String(mockInstitutionContentCourses.length + 1),
+      title: '',
+      chaptersCount: 0,
+      price: 0,
+      status: 'draft',
+      studentsCount: 0,
+      rating: 0,
+      updatedAt: new Date().toISOString(),
+    };
+    mockInstitutionContentCourses.push(newCourse);
+
+    return HttpResponse.json({
+      code: 0,
+      message: "success",
+      data: newCourse
+    });
+  }),
+
+  // 归档课程
+  http.put('/api/institution/content/courses/:id/archive', ({ params }) => {
+    const course = mockInstitutionContentCourses.find(c => c.id === params.id);
+    if (course) {
+      course.status = 'archived';
+      return HttpResponse.json({
+        status: 200,
+        message: 'success',
+      });
+    }
+    return new HttpResponse(null, {
+      status: 404,
+      statusText: 'Course not found',
+    });
+  }),
+
+  // 课程列表查询
+  http.get('/course/list', ({ request }) => {
+    const url = new URL(request.url);
+    const pageNo = Number(url.searchParams.get('pageNo')) || 1;
+    const pageSize = Number(url.searchParams.get('pageSize')) || 10;
+    const courseName = url.searchParams.get('courseName');
+    const status = url.searchParams.get('status');
+    const mt = url.searchParams.get('mt');
+    const st = url.searchParams.get('st');
+
+    let filteredCourses = mockCourseList;
+
+    if (courseName) {
+      filteredCourses = filteredCourses.filter(course => 
+        course.name && course.name.toLowerCase().includes(courseName.toLowerCase())
+      );
+    }
+
+    if (status) {
+      filteredCourses = filteredCourses.filter(course => 
+        course.status === status
+      );
+    }
+
+    if (mt) {
+      filteredCourses = filteredCourses.filter(course => 
+        course.mt === Number(mt)
+      );
+    }
+
+    if (st) {
+      filteredCourses = filteredCourses.filter(course => 
+        course.st === Number(st)
+      );
+    }
+
+    const start = (pageNo - 1) * pageSize;
+    const end = start + pageSize;
+    const items = filteredCourses.slice(start, end);
+
+    return HttpResponse.json({
+      code: 0,
+      message: "success",
+      data: {
+        items,
+        counts: filteredCourses.length,
+        page: pageNo,
+        pageSize
+      }
+    });
+  }),
+
+  // 获取课程统计数据
+  http.get('/course/stats', () => {
+    return HttpResponse.json({
+      code: 0,
+      message: "success",
+      data: mockCourseStats
+    });
+  }),
+
+  // 创建课程
+  http.post('/course', async ({ request }) => {
+    const body = await request.json();
+    const newCourse = {
+      id: mockCourseList.length + 1,
+      name: '',
+      brief: '',
+      mt: 1,
+      st: 1,
+      mtName: "前端开发",
+      stName: "React开发",
+      charge: "201001",
+      price: 0,
+      status: "202001",
+      teacherName: "",
+      validDays: 365,
+      studentsCount: 0,
+      rating: 0,
+      updatedAt: new Date().toISOString(),
+    };
+    Object.assign(newCourse, body);
+    mockCourseList.push(newCourse);
+
+    return HttpResponse.json({
+      code: 0,
+      message: "success",
+      data: newCourse.id
+    });
+  }),
+
+  // 查询课程计划树
+  http.get('/teachplan/tree/:courseId', ({ params }) => {
+    const courseId = Number(params.courseId);
+    const teachplanData = mockTeachplanTree[courseId] || [];
+
+    return HttpResponse.json({
+      code: 0,
+      message: "success",
+      data: teachplanData
+    });
+  }),
+
+  // 查询课程教师列表
+  http.get('/course-teacher/list/:courseId', ({ params }) => {
+    const courseId = Number(params.courseId);
+    const teacherData = mockTeachers[courseId];
+
+    return HttpResponse.json({
+      code: 0,
+      message: "success",
+      data: teacherData ? teacherData : []
+    });
+  }),
+
+  // 提交课程审核
+  http.post('/course/:courseId/audit/submit', ({ params }) => {
+    const courseId = Number(params.courseId);
+    const course = mockCourseList.find(c => c.id === courseId);
+    if (course) {
+      course.status = "202002"; // 审核中
+    }
+    return HttpResponse.json({
+      code: 0,
+      message: "success",
+      data: null
+    });
+  }),
+
+  // 保存课程计划
+  http.post('/teachplan', async ({ request }) => {
+    const body = await request.json();
+    const newTeachPlan = {
+      id: Date.now(),
+      name: '',
+      level: 1,
+      orderBy: 1,
+      teachPlanTreeNodes: [],
+    };
+
+    // 创建一个新的课程计划树节点
+    mockTeachplanTree[1] = mockTeachplanTree[1] || [];
+    mockTeachplanTree[1].push(newTeachPlan);
+
+    return HttpResponse.json({
+      code: 0,
+      message: "success",
+      data: null
+    });
+  }),
+
+  // 章节向上移动
+  http.post('/teachplan/:teachplanId/moveup', ({ params }) => {
+    const teachplanId = Number(params.teachplanId);
+    const courseId = 1; // 简化处理，固定使用课程ID 1
+    const chapters = mockTeachplanTree[courseId];
+    
+    if (chapters) {
+      const currentIndex = chapters.findIndex(chapter => chapter.id === teachplanId);
+      if (currentIndex > 0) {
+        // 交换当前章节和上一个章节的位置
+        const temp = chapters[currentIndex];
+        chapters[currentIndex] = chapters[currentIndex - 1];
+        chapters[currentIndex - 1] = temp;
+        
+        // 更新排序号
+        chapters[currentIndex].orderBy = currentIndex + 1;
+        chapters[currentIndex - 1].orderBy = currentIndex;
+      }
+    }
+
+    return HttpResponse.json({
+      code: 0,
+      message: "success",
+      data: null
+    });
+  }),
+
+  // 章节向下移动
+  http.post('/teachplan/:teachplanId/movedown', ({ params }) => {
+    const teachplanId = Number(params.teachplanId);
+    const courseId = 1; // 简化处理，实际应该从请求中获取
+    const chapters = mockTeachplanTree[courseId];
+    
+    if (chapters) {
+      const currentIndex = chapters.findIndex(chapter => chapter.id === teachplanId);
+      if (currentIndex < chapters.length - 1) {
+        // 交换当前章节和下一个章节的位置
+        const temp = chapters[currentIndex];
+        chapters[currentIndex] = chapters[currentIndex + 1];
+        chapters[currentIndex + 1] = temp;
+        
+        // 更新排序号
+        chapters[currentIndex].orderBy = currentIndex + 1;
+        chapters[currentIndex + 1].orderBy = currentIndex + 2;
+      }
+    }
+
+    return HttpResponse.json({
+      code: 0,
+      message: "success",
+      data: null
+    });
+  }),
+
+  // 创建机构课程
+  http.post('/api/institution/content/courses', async ({ request }) => {
+    const body = await request.json();
+    const newCourse = {
+      id: String(mockInstitutionContentCourses.length + 1),
+      title: '',
+      chaptersCount: 0,
+      price: 0,
+      status: 'draft',
+      studentsCount: 0,
+      rating: 0,
+      updatedAt: new Date().toISOString(),
+    };
+    mockInstitutionContentCourses.push(newCourse);
+
+    return HttpResponse.json({
+      code: 0,
+      message: "success",
+      data: newCourse
+    });
+  }),
+
+  // 获取课程章节树
+  http.get('/teachplan/tree/:courseId', ({ params }) => {
+    const courseId = String(params.courseId);
+    return HttpResponse.json({
+      code: 0,
+      message: "success",
+      data: mockChapters[courseId] || []
+    });
+  }),
+
+  // 创建/更新章节
+  http.post('/teachplan', async ({ request }) => {
+    const newNode = {
+      id: Date.now(),
+      name: '',
+      level: 1,
+      orderBy: 1,
+      teachPlanTreeNodes: []
+    };
+
+    const courseId = '1'; // 简化处理，使用固定值
+    if (!mockChapters[courseId]) {
+      mockChapters[courseId] = [];
+    }
+
+    // 添加到章节列表
+    newNode.orderBy = mockChapters[courseId].length + 1;
+    mockChapters[courseId].push(newNode);
+
+    return HttpResponse.json({
+      code: 0,
+      message: "success",
+      data: null
+    });
+  }),
+
+  // 创建小节
+  http.post('/teachplan/section', async ({ request }) => {
+    const courseId = '1'; // 简化处理，使用固定值
+    const chapter = mockChapters[courseId][0]; // 简化处理，使用第一个章节
+
+    if (chapter) {
+      const newSection = {
+        id: Date.now(),
+        name: '新小节',
+        level: 2,
+        orderBy: chapter.teachPlanTreeNodes.length + 1,
+        mediaType: 'video',
+        mediaFileName: 'example.mp4'
+      };
+
+      chapter.teachPlanTreeNodes.push(newSection);
+    }
+
+    return HttpResponse.json({
+      code: 0,
+      message: "success",
+      data: null
+    });
+  }),
+
+  // 小节上移
+  http.post('/teachplan/:teachplanId/moveup', ({ params }) => {
+    const teachplanId = Number(params.teachplanId);
+    
+    // 遍历所有课程的章节
+    Object.values(mockChapters).forEach(chapters => {
+      chapters.forEach(chapter => {
+        const sections = chapter.teachPlanTreeNodes;
+        const index = sections.findIndex(s => s.id === teachplanId);
+        if (index > 0) {
+          // 交换位置
+          [sections[index], sections[index - 1]] = [sections[index - 1], sections[index]];
+          // 更新排序号
+          sections[index].orderBy = index + 1;
+          sections[index - 1].orderBy = index;
+        }
+      });
+    });
+
+    return HttpResponse.json({
+      code: 0,
+      message: "success",
+      data: null
+    });
+  }),
+
+  // 小节下移
+  http.post('/teachplan/:teachplanId/movedown', ({ params }) => {
+    const teachplanId = Number(params.teachplanId);
+    
+    Object.values(mockChapters).forEach(chapters => {
+      chapters.forEach(chapter => {
+        const sections = chapter.teachPlanTreeNodes;
+        const index = sections.findIndex(s => s.id === teachplanId);
+        if (index >= 0 && index < sections.length - 1) {
+          // 交换位置
+          [sections[index], sections[index + 1]] = [sections[index + 1], sections[index]];
+          // 更新排序号
+          sections[index].orderBy = index + 1;
+          sections[index + 1].orderBy = index + 2;
+        }
+      });
+    });
+
+    return HttpResponse.json({
+      code: 0,
+      message: "success",
+      data: null
+    });
+  }),
+
+  // 删除章节或小节
+  http.delete('/teachplan/:teachplanId', ({ params }) => {
+    const teachplanId = Number(params.teachplanId);
+    
+    Object.values(mockChapters).forEach(chapters => {
+      // 删除章节
+      const chapterIndex = chapters.findIndex(c => c.id === teachplanId);
+      if (chapterIndex >= 0) {
+        chapters.splice(chapterIndex, 1);
+        return;
+      }
+      
+      // 删除小节
+      chapters.forEach(chapter => {
+        const sections = chapter.teachPlanTreeNodes;
+        const sectionIndex = sections.findIndex(s => s.id === teachplanId);
+        if (sectionIndex >= 0) {
+          sections.splice(sectionIndex, 1);
+        }
+      });
+    });
+
+    return HttpResponse.json({
+      code: 0,
+      message: "success",
+      data: null
+    });
+  }),
+
+  // 上传媒资文件（模拟）
+  http.post('/media/upload', async ({ request }) => {
+    // 模拟文件上传
+    return HttpResponse.json({
+      code: 0,
+      message: "success",
+      data: {
+        fileName: "uploaded-video.mp4",
+        fileUrl: "https://example.com/videos/uploaded-video.mp4"
+      }
     });
   }),
 ]; 
